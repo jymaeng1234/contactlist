@@ -1,0 +1,59 @@
+h1 {
+  text-align: center;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.InputCon {
+  width: 25%;
+}
+.ListArea {
+  width: 75%;
+  border: 1px solid green;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+  border: 1px solid red;
+  /* text-align: center; */
+}
+
+.main > div {
+  border: 3px solid blue;
+}
+
+.InputCon {
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.InputCon > * {
+  width: 100%;
+}
+
+input {
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #3c35f2;
+  border: 1px solid #3c35f2;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #eaeaea;
+  color: black;
+  border: 1px solid black;
+}
