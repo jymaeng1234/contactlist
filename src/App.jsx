@@ -9,23 +9,19 @@ function App() {
   const [name, setName] = useState("");
   const [phone, setNumber] = useState("");
   const [memo, setMemo] = useState("");
-  const [group, setGroup] = useState(0);
+  const [group, setGroup] = useState("가족");
 
-  const save = () => {
-    console.log(`inputName : ${name}`);
-    console.log(`phoneNumber : ${phone}`);
-    console.log(`memo : ${memo}`);
-    console.log(`Group:${group}`);
-
-    //로컬 스토리지에 저장
+  const saveData = () => {
+    let contactList = JSON.parse(localStorage.getItem("contactList")) || [];
     const contactData = { name, phone, group, memo };
-    localStorage.setItem("contactList", JSON.stringify(contactData));
+    contactList = [contactData, ...contactList];
+    localStorage.setItem("contactList", JSON.stringify(contactList));
 
     //입력 요소 초기화
     setName("");
     setNumber("");
     setMemo("");
-    setGroup("가족");
+    setGroup("가족"); //  수정필요
   };
 
   const ChangeName = (event) => {
@@ -56,7 +52,7 @@ function App() {
           <InputEl inputName="간단한기록" value={memo} onChange={ChangeMemo} />
           <button
             onClick={() => {
-              save();
+              saveData();
             }}
           >
             저장
