@@ -1,6 +1,6 @@
 export default function List({ name, phone }) {
   return (
-    <div>
+    <div className="ListItem">
       <p>{name}</p>
       <p>{phone}</p>
       <button>세부사항</button>

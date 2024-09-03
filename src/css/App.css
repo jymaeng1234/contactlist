@@ -1,48 +1,47 @@
+main {
+  width: 80%;
+  margin: auto;
+}
+
 h1 {
   text-align: center;
 }
 
-div {
+#mainCon {
   display: flex;
   justify-content: center;
+}
+
+.InputEl,
+.SelEl,
+.ListItem {
+  display: flex;
   align-items: center;
   gap: 10px;
-  text-align: left;
 }
 
 .InputCon {
-  width: 25%;
+  width: 40%;
+  margin: 0 30px;
 }
+
 .ListArea {
-  width: 75%;
-  border: 1px solid green;
+  width: 60%;
 }
 
-.main {
-  width: 80%;
-  margin: auto;
-  border: 1px solid red;
-  /* text-align: center; */
-}
-
-.main > div {
-  border: 3px solid blue;
+.selEl > p {
+  display: block;
 }
 
 .InputCon {
+  height: 250px;
   border: 2px solid #eaeaea;
   border-radius: 10px;
   padding: 20px;
 }
 
-.InputCon > * {
-  width: 100%;
-}
-
 input {
-  background-color: aliceblue;
-  border: 1px solid black;
-  border-radius: 3px;
+  flex: 1;
 }
 
 button {
@@ -56,4 +55,8 @@ button:hover {
   background-color: #eaeaea;
   color: black;
   border: 1px solid black;
+}
+
+.saveBtn {
+  width: 100%;
 }

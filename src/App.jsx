@@ -10,9 +10,10 @@ function App() {
   const [phone, setNumber] = useState("");
   const [memo, setMemo] = useState("");
   const [group, setGroup] = useState("가족");
+  let contactList = JSON.parse(localStorage.getItem("contactList")) || [];
 
   const saveData = () => {
-    let contactList = JSON.parse(localStorage.getItem("contactList")) || [];
+    contactList = JSON.parse(localStorage.getItem("contactList")) || [];
     const contactData = { name, phone, group, memo };
     contactList = [contactData, ...contactList];
     localStorage.setItem("contactList", JSON.stringify(contactList));
@@ -44,13 +45,14 @@ function App() {
     <main className="main">
       <h1>연락처 리스트</h1>
 
-      <div>
+      <div id="mainCon">
         <section className="InputCon">
           <InputEl inputName="이름" value={name} onChange={ChangeName} />
           <InputEl inputName="전화번호" value={phone} onChange={ChangeNumber} />
           <SelectEl value={group} onChange={ChangeGroup} />
           <InputEl inputName="간단한기록" value={memo} onChange={ChangeMemo} />
           <button
+            className="saveBtn"
             onClick={() => {
               saveData();
             }}
@@ -64,12 +66,10 @@ function App() {
             placeholder="검색어를 입력 후 엔터를 누르세요"
             btnText="전체리스트 보기"
           />
-          <List name="홍길동" phone="010-1234-1212" />
-          <List name="홍길동" phone="010-1234-1212" />
-          <List name="홍길동" phone="010-1234-1212" />
-          <List name="홍길동" phone="010-1234-1212" />
-          <List name="홍길동" phone="010-1234-1212" />
-          <List name="홍길동" phone="010-1234-1212" />
+
+          {contactList.map((item, index) => (
+            <List key={index} name={item.name} phone={item.phone} />
+          ))}
         </section>
       </div>
 

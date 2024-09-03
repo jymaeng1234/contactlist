@@ -1,8 +1,8 @@
 export default function SelectEl({ selected, onChange }) {
   return (
-    <div>
+    <div className="SelEl">
       <p>그룹</p>
-      <select name="selectgroup" value={selected} onChange={onChange}>
+      <select className="selectgroup" value={selected} onChange={onChange}>
         <option value="가족">가족</option>
         <option value="친구">친구</option>
         <option value="직장">직장</option>
