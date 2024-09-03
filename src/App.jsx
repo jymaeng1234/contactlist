@@ -67,9 +67,14 @@ function App() {
             btnText="전체리스트 보기"
           />
 
-          {contactList.map((item, index) => (
+          {/* {contactList.map((item, index) => (
             <List key={index} name={item.name} phone={item.phone} />
-          ))}
+          ))} */}
+
+          <List name="홍길동" phone="010-1234-1212" />
+          <List name="홍길동" phone="010-1234-1212" />
+          <List name="홍길동" phone="010-1234-1212" />
+          <List name="홍길동" phone="010-1234-1212" />
         </section>
       </div>
 
